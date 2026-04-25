@@ -13,13 +13,13 @@ The goal is to understand not just *how* linear regression works, but *why* it w
 
 ## Problem Statement
 
-We are given a dataset with an input variable (e.g., years of experience) and a target variable (e.g., salary). The objective is to learn a function that can predict the target value from the input.
+I used a synthetic dataset with an input variable (e.g., years of experience) and a target variable (e.g., salary). The objective is to learn a function that can predict the target value from the input.
 
 ---
 
 ## Model Intuition
 
-We assume a linear relationship between the input and output:
+I assume a linear relationship between the input and output:
 
 > y = wx + b
 
@@ -32,7 +32,7 @@ The model tries to find the best values of w and b such that the predicted value
 
 ## Loss Function (How We Measure Error)
 
-To quantify how well the model is performing, we use the Mean Squared Error (MSE):
+To quantify how well the model is performing, I used the Mean Squared Error (MSE):
 
 > J(w, b) = (1/n) Σ (y - (wx + b))²
 
@@ -45,7 +45,7 @@ This function measures the average squared difference between actual values and 
 
 ## Optimization: Gradient Descent
 
-Instead of solving for w and b directly, we use an iterative optimization algorithm called **gradient descent**.
+Instead of solving for w and b directly, I   used an iterative optimization algorithm called **gradient descent**.
 
 ### Key Idea
 

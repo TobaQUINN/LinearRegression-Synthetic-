@@ -4,21 +4,21 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-#Load the dataset into a dataframe
+##LOADING THE DOCUMENT INTO A DATAFRAME
 data = pd.read_csv(r'C:\Users\DARA2\Downloads\experience_salary.csv')
 #Check the columns in the dataset
 print(data.columns)
 X= data['years_experience'].values
 y= data['salary'].values
 
-#Initializing parameters
-w= 0
-b= 0
+#INITIALIZING PARAMETERS, HYPERPARAMETERS
+w= 0 # slope, measures the importance of a feature
+b= 0 # intercept, determines where the line of best fit crosses the vertical axiswhen all input features are zero
 lr = 0.01  # learning rate
 epochs = 4000 # number of iteration for learning
 n= len(X)  # number of data points
 
-## Training loop
+## TRAINING LOOP
 # Model Hypothesis: I assume a linear relationship between the years of experience and salary
 loss_history = []
 
@@ -36,16 +36,12 @@ for i in range(epochs):
     if i % 100 == 0:
         print(f'Epoch {i}, Loss {loss}')
         
-
-
 print('Learned parameters')
 print('w:', w)
 print('b:', b)
 
-print(len(loss_history))
-print(loss_history[:5])
+##PLOTS
 # Plot to check if Loss is decreasing per Epochs
-
 plt.plot(loss_history)
 plt.yscale('log')
 plt.xlabel('Epochs')
@@ -54,12 +50,8 @@ plt.title('Loss vs Epochs')
 plt.show()
 plt.savefig('plots/loss_vs_epochs.png')
 
-
-import matplotlib.pyplot as plt
-
-# Scatter plot (actual data)
+# Scatter plot (actual data) -- CHECKING REGRESSION FIT
 plt.scatter(X, y, label="Actual Data")
-
 # Line plot (model prediction)
 plt.plot(X, y_pred, label="Fitted Line", color='red')
 
